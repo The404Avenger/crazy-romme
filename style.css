@@ -1,0 +1,64 @@
+/* Crazy Rommé – Webseite. Farben wie in der App (grüner Spieltisch, goldene Überschriften). */
+:root {
+  --bg: #082e18;
+  --bg-glow: #1c6e38;
+  --card: rgba(0, 0, 0, 0.22);
+  --card-line: rgba(255, 255, 255, 0.12);
+  --text: #f0f6f0;
+  --muted: #b9cfbf;
+  --accent: #f2c94c;
+  --accent-soft: rgba(242, 201, 76, 0.1);
+  --line: rgba(255, 255, 255, 0.12);
+  --on-accent: #1d2a10;
+  --crazy: #c48af5;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0%, var(--bg-glow) 0%, rgba(28, 110, 56, 0) 65%), var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font: 17px/1.6 ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: 820px; margin: 0 auto; padding: 24px 16px 48px; }
+header.top {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 24px;
+}
+header.top img { width: 40px; height: 40px; border-radius: 10px; }
+header.top a.home { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 19px; }
+nav { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
+nav a { text-decoration: none; }
+h1, h2, .hero h1 { font-family: "New York", ui-serif, Georgia, serif; }
+.hero { text-align: center; padding: 24px 0 8px; }
+.hero img { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45); }
+.hero h1 { margin: 16px 0 4px; font-size: 38px; line-height: 1.2; color: var(--accent); }
+.hero p.claim { margin: 0; color: var(--muted); font-size: 19px; }
+.badge {
+  display: inline-block; margin-top: 20px; padding: 12px 22px; border-radius: 14px;
+  background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 700;
+}
+.card { background: var(--card); border: 1px solid var(--card-line); border-radius: 18px; padding: 20px; margin: 16px 0; }
+.card h2 { margin-top: 0; font-size: 22px; }
+.card.crazy h2 { color: var(--crazy); }
+ul.points { padding-left: 20px; margin: 0; }
+ul.points li { margin: 4px 0; }
+.shots { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 24px 0 8px; }
+.shots img { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--card-line); display: block; }
+h1 { font-size: 30px; line-height: 1.25; }
+h2 { font-size: 22px; margin-top: 32px; }
+.note { background: var(--accent-soft); border: 1px solid rgba(242, 201, 76, 0.3); border-radius: 12px; padding: 12px 16px; }
+code { font-size: 15px; }
+footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
+details { background: var(--card); border: 1px solid var(--card-line); border-radius: 12px; padding: 12px 16px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 700; }
+@media (max-width: 520px) {
+  nav { margin-left: 0; width: 100%; }
+  header.top { flex-wrap: wrap; }
+  .hero h1 { font-size: 32px; }
+}
